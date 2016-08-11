@@ -26,12 +26,12 @@ geometry_col='some_name'```
 ```from stratplotlib import Stratomap
 m = Stratomap()
 m.scatter(df, x_col='x', y_col='y', color='red')
-m.line(source=list_of_source, destination=list_of_dest, color='yellow')
+m.line(source=list_of_source, target=list_of_dest, color='yellow')
 m.show()```
 !https://github.com/konpap94/Stratplotlib_readme/blob/master/pics/ex_2.png!
 
 ```m = Stratomap()
-m.line(source=list_of_source, destination=list_of_dest, color='red', weight=list_of_weights)
+m.line(source=list_of_source, target=list_of_dest, color='red', weight=list_of_weights)
 m.show()```
 !https://github.com/konpap94/Stratplotlib_readme/blob/master/pics/ex_3.png!
 
