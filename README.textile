@@ -34,11 +34,11 @@ m.line(source=list_of_source, target=list_of_dest, color='red', weight=list_of_w
 m.show()```
 !https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_3.png!
 
-```m = stratoMap()
+```m = stratomap()
 m.set_tiles('cartodbdark_matter')
 m.scatter(df, x_col='LONGITUDE', y_col='LATITUDE', color='yellow', scale=5, value_col='VALUES')```
 !https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_4.png!
-```m = stratoMap()
+```m = stratomap()
 m.groupmap(df, group_col='GROUP', geometry_col='GEOMETRIES')```
 !https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_5.png!
 
