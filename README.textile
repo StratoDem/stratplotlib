@@ -18,8 +18,7 @@ h4. Examples
 ```from stratplotlib import Stratomap
 m = Stratomap()
 m.choropleth(df, value_col='VALUES', geometry_col='GEOMETRY') 
-m.save('map.html')
-geometry_col='some_name'```
+m.save('map.html')```
 
 !https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_1.png!
 
