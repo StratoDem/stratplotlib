@@ -26,6 +26,7 @@ m.save('map.html')```
 m = Stratomap()
 m.scatter(df, x_col='x', y_col='y', color='red')
 m.line(source=list_of_source, target=list_of_dest, color='yellow')
+m.marker(x, y, number_of_sides=3, fill_color='black', color='green', rotation=30)
 m.show()```
 !https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_2.png!
 
@@ -33,4 +34,13 @@ m.show()```
 m.line(source=list_of_source, target=list_of_dest, color='red', weight=list_of_weights)
 m.show()```
 !https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_3.png!
+
+```m = StratoMap()
+m.set_tiles('cartodbdark_matter')
+m.scatter(df[:200], x_col='LONGITUDE', y_col='LATITUDE', color='yellow', scale=5, value_col='CBSA')```
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_4.png!
+```m = StratoMap()
+m.groupmap(df, group_col='GROUP')```
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_5.png!
+
 
