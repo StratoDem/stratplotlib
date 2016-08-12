@@ -1,4 +1,4 @@
-!https://github.com/StratoDem/stratplotlib/tree/kostas/img/title.png!
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/title.png!
 
 Stratplotlib is a custom, open source mapping tool that allows users to easily interactively visualize geospatial data. The tool works by creating a base map object that is used for the addition of different visualization layers. 
 
@@ -21,17 +21,17 @@ m.choropleth(df, value_col='VALUES', geometry_col='GEOMETRY')
 m.save('map.html')
 geometry_col='some_name'```
 
-!https://github.com/StratoDem/stratplotlib/tree/kostas/img/ex_1.png!
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_1.png!
 
 ```from stratplotlib import Stratomap
 m = Stratomap()
 m.scatter(df, x_col='x', y_col='y', color='red')
 m.line(source=list_of_source, target=list_of_dest, color='yellow')
 m.show()```
-!https://github.com/StratoDem/stratplotlib/tree/kostas/img/ex_2.png!
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_2.png!
 
 ```m = Stratomap()
 m.line(source=list_of_source, target=list_of_dest, color='red', weight=list_of_weights)
 m.show()```
-!https://github.com/StratoDem/stratplotlib/tree/kostas/img/ex_3.png!
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_3.png!
 
