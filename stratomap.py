@@ -429,7 +429,7 @@ class StratoMap:
         return self.show()
 
     def scatter(self, df, x_col, y_col, group_col=None, value_col=None, popup_col=None,
-                color='blue', scale=1., fill_opacity=0.8, value_pow=1, zoom_start=7):
+                color='blue', scale=1., fill_opacity=0.8, value_pow=1, zoom_start=7, draw_center=True):
         """
         Adds a scatter plot to the map-object given a dataframe with a x and y column.
         Can accomodate different groups by changing colors and different values by changing radius.
@@ -459,6 +459,8 @@ class StratoMap:
             Can be used to make scatter point size differences more visible.
         zoom_start: int, default 7
             Zoom level for the initial display of the map
+        draw_center: bool, default True
+            If set to True, draws a black dot in the center of each scatter dot
         Returns
         -------
         folium.Map
@@ -507,7 +509,7 @@ class StratoMap:
         def add_markers(df_marker):
             """Add dots to the map in place"""
             self._add_dots(df_marker, x_col, y_col, group_col, value_col, color,
-                           scale, fill_opacity, f)
+                           scale, fill_opacity, f, draw_center=draw_center)
 
         df.apply(add_markers, axis=1)
 
@@ -863,7 +865,7 @@ class StratoMap:
         return sum_x / length, sum_y / length
 
     @staticmethod
-    def _add_dots(df, x_col, y_col, group_col, value_col, color, scale, opacity, f):
+    def _add_dots(df, x_col, y_col, group_col, value_col, color, scale, opacity, f, draw_center):
         """
         Adds the markers (coordinate, color, size) to the featureGroup for all the coordinates given.
         This function is used to .apply() it to a dataframe for the plotting of the scatterplot.
@@ -878,6 +880,7 @@ class StratoMap:
         color: str
         scale: float
         opacity: float
+        draw_center:bool
         f: folium.map.FeatureGroup
 
         Returns
@@ -895,13 +898,13 @@ class StratoMap:
                 fill_color=fill_color,
                 fill_opacity=opacity)
         )
-
-        f.add_child(
-            folium.features.CircleMarker(
-                coordinates,
-                radius=radius / 100,
-                color=None,
-                fill_color='black',
-                fill_opacity=0.6)
+        if draw_center:
+            f.add_child(
+                folium.features.CircleMarker(
+                    coordinates,
+                    radius=radius / 100,
+                    color=None,
+                    fill_color='black',
+                    fill_opacity=0.6)
         )
 
