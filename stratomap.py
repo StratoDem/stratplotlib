@@ -337,16 +337,26 @@ class StratoMap:
 
     def line(self, source, target, color='blue', line_opacity=0.8, weight=10, popup=None):
         """
-        Draws corresponding lines given a set of source and destination coordinates
+        Draws corresponding lines given a list of source and target coordinates
 
         Parameters
         ----------
-        source
-        target
-        color
-        line_opacity
-        weight
-        popup
+        source: tuple or list, or list of tuples or list of lists
+            The source coordinates (x,y) . Can also be a list of coordinates
+            e.g. [ (x1,y1), (x2,y2) ]
+            or [ [x1,y1], [x2,y2] ]
+        target: tuple or list, or list of tuples or list of lists
+            The target coordinates (x,y) . Can also be a list of coordinates
+            e.g. [ (x1,y1), (x2,y2) ]
+            or [ [x1,y1], [x2,y2] ]
+        color: str or list
+            valid color string of the line color. default: 'blue'
+        line_opacity: float or list
+            opacity of the drawn line(s). Also known as alpha. default: 0.8
+        weight: float or list
+            Changes the thickness of the drawn line(s). default: 10
+        popup: str or list
+            Sets the popup text when the line is clicked. default: None
 
         Returns
         -------
