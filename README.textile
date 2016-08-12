@@ -15,15 +15,14 @@ Stratplotlib currently provides 5 APIs for different geospatial visualizations:
 * *line*, draws a line between a source and a destination point
 
 h4. Examples
-```from stratplotlib import Stratomap
+```import stratplotlib
 m = stratomap()
 m.choropleth(df, value_col='VALUES', geometry_col='GEOMETRY') 
 m.save('map.html')```
 
 !https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_1.png!
 
-```from stratplotlib import Stratomap
-m = stratomap()
+```m = stratomap()
 m.scatter(df, x_col='x', y_col='y', color='red')
 m.line(source=list_of_source, target=list_of_dest, color='yellow')
 m.marker(x, y, number_of_sides=3, fill_color='black', color='green', rotation=30)
