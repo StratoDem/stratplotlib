@@ -16,7 +16,7 @@ Stratplotlib currently provides 5 APIs for different geospatial visualizations:
 
 h4. Examples
 ```from stratplotlib import Stratomap
-m = Stratomap()
+m = stratomap()
 m.choropleth(df, value_col='VALUES', geometry_col='GEOMETRY') 
 m.save('map.html')```
 
