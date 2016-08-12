@@ -2,7 +2,7 @@
 
 Stratplotlib is a custom, open source mapping tool that allows users to easily interactively visualize geospatial data. The tool works by creating a base map object that is used for the addition of various visualization layers. 
 
-Stratplotlib was created as part of "Stratodem Analytics'":https://stratodem.com/ mapping and plotting platform and is built on top of "folium":https://github.com/python-visualization/folium, "matplotlib":https://github.com/matplotlib/matplotlib and "leaflet":https://github.com/Leaflet/Leaflet. It is designed for the simplistic integration of many elements into a map plotting while largely assuming the use of pandas.DataFrames as the underlying data structure of the user.
+Stratplotlib was created as part of "Stratodem Analytics":https://stratodem.com/' mapping and plotting platform and is built on top of "folium":https://github.com/python-visualization/folium, "matplotlib":https://github.com/matplotlib/matplotlib and "leaflet":https://github.com/Leaflet/Leaflet. It is designed for the simplistic integration of many elements into a map plotting while largely assuming the use of pandas.DataFrames as the underlying data structure of the user.
 
 h4. Prerequisites
 ```pip install folium json geopandas numpy pandas shapely```
