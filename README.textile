@@ -1,0 +1,45 @@
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/title.png!
+
+Stratplotlib is a custom, open source mapping tool that allows users to easily interactively visualize geospatial data. The tool works by creating a base map object that is used for the addition of various visualization layers. 
+
+Stratplotlib was created as part of "Stratodem Analytics":https://stratodem.com/' mapping and plotting platform and is built on top of "folium":https://github.com/python-visualization/folium, "matplotlib":https://github.com/matplotlib/matplotlib and "leaflet":https://github.com/Leaflet/Leaflet. It is designed for the simplistic integration of many elements into a map plotting while largely assuming the use of pandas.DataFrames as the underlying data structure of the user.
+
+h4. Prerequisites
+```pip install folium json geopandas numpy pandas shapely```
+
+Stratplotlib currently provides 5 APIs for different geospatial visualizations:
+* *choropleth*, assigns a shade of a color to an area - plots a value "gradient" over space
+* *groupmap*, assigns distinct colors to different area groups
+* *scatter*, plots a set of (x,y) coordinates into the map
+* *marker*, plots a set of  (x,y) coordinates as polygon markers into the map
+* *line*, draws a line between a source and a destination point
+
+h4. Examples
+```from stratplotlib import stratomap```
+```m = stratomap()
+m.choropleth(df, value_col='VALUES', geometry_col='GEOMETRY') 
+m.save('map.html')```
+
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_1.png!
+
+```m = stratomap()
+m.scatter(df, x_col='x', y_col='y', color='red')
+m.line(source=list_of_source, target=list_of_dest, color='yellow')
+m.marker(x, y, number_of_sides=3, fill_color='black', color='green', rotation=30)
+m.show()```
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_2.png!
+
+```m = stratomap()
+m.line(source=list_of_source, target=list_of_dest, color='red', weight=list_of_weights)
+m.show()```
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_3.png!
+
+```m = stratomap()
+m.set_tiles('cartodbdark_matter')
+m.scatter(df, x_col='LONGITUDE', y_col='LATITUDE', color='yellow', scale=5, value_col='VALUES')```
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_4.png!
+```m = stratomap()
+m.groupmap(df, group_col='GROUP', geometry_col='GEOMETRIES')```
+!https://github.com/StratoDem/stratplotlib/blob/kostas/img/ex_5.png!
+
+
