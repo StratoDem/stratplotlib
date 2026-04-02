@@ -18,7 +18,7 @@
         "command": "pip install -e ."
       },
       "build": {
-        "command": "pip install wheel && python setup.py bdist_wheel"
+        "command": "pip install setuptools wheel && python setup.py bdist_wheel"
       },
       "artefacts": {
         "source_code": [
