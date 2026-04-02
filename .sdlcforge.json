@@ -8,17 +8,17 @@
       "path": "",
       "runtime": {
         "name": "python",
-        "version": "3.8"
+        "version": "3.13"
       },
       "build_tool": {
-        "name": "pip",
-        "version": "24.0"
+        "name": "setuptools",
+        "version": "3.8"
       },
       "dependency": {
         "command": "pip install -e ."
       },
       "build": {
-        "command": "python setup.py sdist bdist_wheel"
+        "command": "pip install wheel && python setup.py bdist_wheel"
       },
       "artefacts": {
         "source_code": [
