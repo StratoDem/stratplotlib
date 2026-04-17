@@ -1,8 +1,8 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='stratplotlib',
-    packages=['stratplotlib'],
+    packages=['stratomap'],
     version=0.1,
     description='A geospatial visualization library designed for DataFrames',
     author='StratoDem Analytics',

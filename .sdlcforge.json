@@ -1,0 +1,38 @@
+{
+  "_comment": "SDLC Forge configuration file for stratplotlib",
+  "schema_version": "1.0",
+  "projects": [
+    {
+      "type": "python",
+      "name": "stratplotlib",
+      "path": "",
+      "runtime": {
+        "name": "python",
+        "version": "3.13"
+      },
+      "build_tool": {
+        "name": "setuptools",
+        "version": "3.8"
+      },
+      "dependency": {
+        "command": "pip install -e ."
+      },
+      "build": {
+        "command": "pip install setuptools wheel && python setup.py bdist_wheel"
+      },
+      "artefacts": {
+        "source_code": [
+          "stratomap/"
+        ],
+        "deliverable": [
+          "dist/*.whl",
+          "dist/*.tar.gz"
+        ],
+        "dependency_manifests": [
+          "setup.py",
+          "setup.cfg"
+        ]
+      }
+    }
+  ]
+}
